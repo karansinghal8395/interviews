@@ -5,4 +5,10 @@
 
 import { LightningElement } from "lwc";
 
-export default class QuoteTotalSummary extends LightningElement {}
+export default class QuoteTotalSummary extends LightningElement {
+
+    handleAdjustQuoteButtonClick(event){
+        this.dispatchEvent(new CustomEvent('adjustbuttonclick'));
+    }
+}
+ 

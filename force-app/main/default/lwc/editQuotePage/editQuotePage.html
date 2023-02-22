@@ -1,9 +1,21 @@
 <!-- Edit Quote Page -->
 <template>
   <div class="slds-tabs_card">
-    <c-quote-total-summary></c-quote-total-summary>
+    <c-quote-total-summary onadjustbuttonclick={handleAdjustClick}></c-quote-total-summary>
     <div class="slds-m-around_medium">
       <c-edit-quote record-id={recordId}></c-edit-quote>
-    </div>
+    </div> 
+
+    <template if:true={isAdjustClick}>
+      <lightning-modal-header label="Adjust quote price"></lightning-modal-header>
+      <lightning-modal-body> 
+        <c-adjust-Quote-Price> </c-adjust-Quote-Price>
+      </lightning-modal-body>
+      <lightning-modal-footer>
+          <lightning-button label="Save" onclick={handleOkay}></lightning-button>
+      </lightning-modal-footer>
+
+    </template>
+
   </div>
 </template>
